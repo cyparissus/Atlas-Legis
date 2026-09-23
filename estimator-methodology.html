@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWMH5ER9YS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-LWMH5ER9YS");
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>Scholarship Estimator Methodology — Atlas Legis</title>
+  <meta name="description" content="How Atlas Legis calculates merit scholarship estimates using ABA 509 disclosure data — data sources, weighting, interpolation, and limitations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --em:       #1a7a50;
+      --em-deep:  #0f5132;
+      --em-mid:   #22a86a;
+      --em-pale:  #d1ece0;
+      --ink:      #0e2018;
+      --ink-soft: #2d4a38;
+      --muted:    #6b8c78;
+      --soft:     #f0f7f3;
+      --border:   rgba(26,122,80,0.12);
+      --shadow:   rgba(14,32,24,0.08);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f5f8f6;
+      min-height: 100vh;
+      color: var(--ink);
+    }
+
+    /* ── Global sidebar (site-wide) ── */
+    .al-mobile-topbar { display: none; position: sticky; top: 0; z-index: 250; background: #ffffff; border-bottom: 1px solid #e2e8f0; align-items: center; gap: 10px; padding: 10px 14px; }
+    .al-mobile-topbar-word { font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #047857; letter-spacing: -.01em; }
+    .al-mt-toggle { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 7px; background: #ffffff; border: 1px solid #e2e8f0; cursor: pointer; }
+    .al-mt-toggle svg { width: 17px; height: 17px; color: #0d1117; }
+    .al-sb-scrim { display: none; position: fixed; inset: 0; background: rgba(13,17,23,.35); z-index: 255; }
+    .al-sb-scrim.open { display: block; }
+    .al-sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 252px; background: #ffffff; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; padding: 22px 16px 18px; overflow-y: auto; z-index: 260; transition: transform .22s ease; font-family: 'DM Sans', system-ui, sans-serif; }
+    .al-sb-brand { padding: 2px 8px 4px; text-decoration: none; display: block; }
+    .al-sb-wordmark { font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif; font-size: 1.32rem; color: #047857; letter-spacing: -.01em; line-height: 1; }
+    .al-sb-tagline { font-size: .68rem; font-weight: 500; color: #94a3b8; letter-spacing: .03em; margin-top: 4px; }
+    .al-sb-map-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #059669; color: #fff; font-size: .82rem; font-weight: 600; padding: 9px 14px; border-radius: 7px; margin: 12px 8px 4px; transition: background .14s; text-decoration: none; }
+    .al-sb-map-btn:hover { background: #047857; }
+    .al-sb-map-btn svg { width: 15px; height: 15px; color: #fff; flex-shrink: 0; }
+    .al-sb-group-lbl { font-size: .66rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #94a3b8; padding: 4px 8px; margin-top: 14px; }
+    .al-sb-nav { display: flex; flex-direction: column; gap: 1px; margin-bottom: 6px; }
+    .al-sb-link { display: flex; align-items: center; gap: 10px; padding: 8px 9px; border-radius: 7px; font-size: .84rem; font-weight: 500; color: #64748b; transition: background .12s, color .12s; position: relative; text-decoration: none; }
+    .al-sb-link svg { width: 17px; height: 17px; flex-shrink: 0; color: #94a3b8; transition: color .12s; }
+    .al-sb-link:hover { background: #ecfdf5; color: #0d1117; }
+    .al-sb-link:hover svg { color: #059669; }
+    .al-sb-link.active { background: #ecfdf5; color: #0d1117; font-weight: 600; }
+    .al-sb-link.active svg { color: #059669; }
+    .al-sb-link.active::before { content: ''; position: absolute; left: -16px; top: 8px; bottom: 8px; width: 3px; border-radius: 0 3px 3px 0; background: #059669; }
+    .al-sb-spacer { flex: 1; }
+    .al-sb-foot { display: flex; flex-direction: column; gap: 1px; padding-top: 6px; border-top: 1px solid #f1f5f9; }
+    .al-sb-foot .al-sb-link { color: #94a3b8; font-size: .8rem; }
+    .al-sb-foot .al-sb-link svg { width: 16px; height: 16px; }
+    .al-sb-foot button.al-sb-link { border: none; background: none; font: inherit; cursor: pointer; width: 100%; text-align: left; }
+    .al-shell { margin-left: 252px; }
+    @media (max-width: 900px) {
+      .al-sidebar { transform: translateX(-100%); }
+      .al-sidebar.open { transform: translateX(0); }
+      .al-mobile-topbar { display: flex; }
+      .al-shell { margin-left: 0; }
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background:
+        radial-gradient(ellipse at 18% 50%, rgba(34,168,106,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 15%, rgba(15,81,50,0.1) 0%, transparent 50%),
+        linear-gradient(155deg, #e8f3ed 0%, #daeae2 60%, #e4efe9 100%);
+      padding: 72px 24px 80px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { max-width: 740px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--em); font-weight: 600; margin-bottom: 22px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block; width: 22px; height: 1.5px;
+      background: var(--em); border-radius: 2px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700; color: var(--em-deep);
+      line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 24px;
+    }
+    .hero h1 em { font-style: italic; color: var(--em); }
+    .hero-lead {
+      font-size: 1.08rem; color: var(--ink-soft); line-height: 1.75;
+      font-weight: 300; max-width: 580px; margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--em-deep); color: #fff;
+      padding: 11px 22px; border-radius: 8px;
+      font-size: 0.87rem; font-weight: 500; text-decoration: none;
+      transition: background 0.15s, transform 0.15s; letter-spacing: 0.01em;
+      border: none; cursor: pointer; font-family: inherit;
+    }
+    .btn-primary:hover { background: var(--em); transform: translateY(-1px); }
+    .btn-primary svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--em-deep);
+      padding: 11px 22px; border-radius: 8px;
+      font-size: 0.87rem; font-weight: 500; text-decoration: none;
+      border: 1.5px solid rgba(15,81,50,0.25);
+      transition: background 0.15s, border-color 0.15s; letter-spacing: 0.01em;
+    }
+    .btn-secondary:hover { background: var(--soft); border-color: var(--em); }
+    .btn-secondary svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── Main ── */
+    .main { max-width: 780px; margin: 0 auto; padding: 0 24px 100px; }
+
+    /* ── Section ── */
+    .section { padding: 60px 0 0; }
+    .section-label {
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--em); font-weight: 600; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 700;
+      color: var(--ink); line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 18px;
+    }
+
+    /* ── Prose ── */
+    .prose { font-size: 0.96rem; color: var(--ink-soft); line-height: 1.82; font-weight: 300; }
+    .prose p { margin-bottom: 18px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { font-weight: 600; color: var(--ink); }
+    .prose em { font-style: italic; }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 60px 0 0; }
+
+    /* ── Steps ── */
+    .steps { margin-top: 28px; display: flex; flex-direction: column; }
+    .step { display: grid; grid-template-columns: 48px 1fr; gap: 0 20px; padding-bottom: 36px; }
+    .step:last-child { padding-bottom: 0; }
+    .step-number-col { display: flex; flex-direction: column; align-items: center; }
+    .step-number {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--em-deep); color: #fff;
+      font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      font-family: 'Playfair Display', serif; letter-spacing: -0.02em;
+    }
+    .step-line { width: 1px; flex: 1; background: var(--border); margin-top: 8px; min-height: 24px; }
+    .step:last-child .step-line { display: none; }
+    .step-body { padding-top: 8px; }
+    .step-title { font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .step-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.72; }
+    .step-desc strong { color: var(--ink-soft); font-weight: 600; }
+
+    /* ── Formula block ── */
+    .formula {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--em);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 12px 0 4px;
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: var(--em-deep);
+      line-height: 1.7;
+    }
+    .formula .comment { color: var(--muted); font-style: italic; font-family: 'DM Sans', sans-serif; }
+
+    /* ── Callout ── */
+    .callout {
+      background: rgba(26,122,80,0.04); border: 1px solid rgba(26,122,80,0.15);
+      border-left: 3px solid var(--em); border-radius: 0 12px 12px 0;
+      padding: 18px 22px; margin-top: 28px;
+    }
+    .callout p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.72; font-weight: 300; margin: 0; }
+    .callout p + p { margin-top: 10px; }
+    .callout p strong { font-weight: 600; color: var(--ink); }
+
+    /* ── Data source chips ── */
+    .source-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+    .source-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 12px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 2px 8px rgba(14,32,24,0.04);
+    }
+    .source-tag {
+      display: inline-block; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--em-pale); color: var(--em-deep);
+      padding: 3px 8px; border-radius: 4px; margin-bottom: 10px;
+    }
+    .source-name { font-size: 0.83rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; line-height: 1.3; }
+    .source-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.55; }
+    @media (max-width: 600px) { .source-grid { grid-template-columns: 1fr; } }
+
+    /* ── Limitations list ── */
+    .limit-list { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+    .limit-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 0.86rem; color: var(--ink-soft); line-height: 1.65;
+    }
+    .limit-dot {
+      flex-shrink: 0; margin-top: 6px;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--em);
+    }
+
+    /* ── Footer ── */
+    .footer { background: #0d1117; padding: 36px 20px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex;
+                    flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+    .footer-brand { font-family: 'Instrument Serif', Georgia, serif; font-size: 1.05rem; font-weight: 400; color: rgba(255,255,255,.75); }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 20px; list-style: none; }
+    .footer-links a { font-size: .78rem; color: rgba(255,255,255,.35); transition: color .14s; text-decoration: none; }
+    .footer-links a:hover { color: rgba(255,255,255,.7); }
+    .footer-copy { font-size: .72rem; color: rgba(255,255,255,.25); }
+
+    /* ── Fade-up ── */
+    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── Print / PDF ── */
+    @media print {
+      .nav, .hero-actions, .footer { display: none !important; }
+      body { background: #fff; }
+      .hero { background: #fff; border: none; padding: 32px 0 24px; }
+      .hero h1 { font-size: 2rem; }
+      .main { padding: 0 0 40px; }
+      .section { padding: 32px 0 0; }
+      .divider { margin: 32px 0 0; }
+      .fade-up { opacity: 1; transform: none; }
+      .formula { background: #f8faf9; }
+      .source-card { box-shadow: none; border: 1px solid #ccc; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="/theme.css">
+  <script src="/theme.js"></script>
+</head>
+<body>
+
+<div class="al-mobile-topbar">
+  <button class="al-mt-toggle" id="alSbToggle" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <span class="al-mobile-topbar-word">Atlas Legis</span>
+</div>
+<div class="al-sb-scrim" id="alSbScrim"></div>
+
+<aside class="al-sidebar" id="alSidebar" aria-label="Site navigation">
+  <a href="/" class="al-sb-brand">
+    <div class="al-sb-wordmark">Atlas Legis</div>
+    <div class="al-sb-tagline">Law School Analytics</div>
+  </a>
+  <a class="al-sb-map-btn" href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>View Map</a>
+
+  <div class="al-sb-group-lbl">Explore</div>
+  <div class="al-sb-nav">
+    <a class="al-sb-link" href="/schools/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>All Schools</a>
+    <a class="al-sb-link" href="/rankings/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>Rankings</a>
+    <a class="al-sb-link" href="/guides/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Guides</a>
+    <a class="al-sb-link" href="/finder/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v4H4zM4 12h10v8H4zM18 12h2v8h-2z"/></svg>School Finder</a>
+    <a class="al-sb-link" href="/scholarship-estimator/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1 3 2.3c0 3-6 1.4-6 4.3 0 1.4 1.3 2.4 3 2.4s3-1 3-2.4"/></svg>Scholarship Estimator</a>
+    <a class="al-sb-link" href="/debt-planner/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20"/><circle cx="7" cy="14.5" r="1"/></svg>Debt Planner</a>
+  </div>
+
+  <div class="al-sb-spacer"></div>
+  <div class="al-sb-foot">
+    <button class="al-sb-link al-theme-toggle" id="alThemeToggle" type="button" aria-label="Toggle dark mode">
+      <svg id="alThemeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg id="alThemeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <a class="al-sb-link" href="/methodology.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.8c0 1.7-2.4 2-2.4 3.5"/><path d="M12 17h.01"/></svg>Methodology</a>
+    <a class="al-sb-link" href="/sources.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Sources</a>
+    <a class="al-sb-link" href="/about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>About</a>
+    <a class="al-sb-link" href="/contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>Contact</a>
+  </div>
+</aside>
+
+<div class="al-shell">
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Scholarship Estimator</div>
+    <h1>How the <em>math</em> works</h1>
+    <p class="hero-lead">A plain-language explanation of how Atlas Legis estimates merit scholarship amounts — from raw ABA data to the dollar figures you see in the table.</p>
+    <div class="hero-actions">
+      <a href="/scholarship-estimator/" class="btn-secondary">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M10 3H3v10h10V6M10 3l3 3M10 3v3h3"/>
+        </svg>
+        Back to Estimator
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Data Sources -->
+  <div class="section fade-up">
+    <div class="section-label">Inputs</div>
+    <div class="section-title">Data sources</div>
+    <div class="prose">
+      <p>All figures come from <strong>ABA 509 Required Disclosure</strong> filings, which every ABA-accredited law school must submit annually. Three file types feed the estimator:</p>
+    </div>
+    <div class="source-grid">
+      <div class="source-card">
+        <div class="source-tag">File 1</div>
+        <div class="source-name">First Year Class</div>
+        <div class="source-desc">LSAT and GPA percentiles (p25 / p50 / p75) and full-time enrollment counts for each entering class.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-tag">File 2</div>
+        <div class="source-name">Grants &amp; Scholarships</div>
+        <div class="source-desc">Percentage of students receiving grants and grant amount percentiles. Covers 2021–2025.</div>
+      </div>
+      <div class="source-card">
+        <div class="source-tag">File 3</div>
+        <div class="source-name">Tuition &amp; Living Expenses</div>
+        <div class="source-desc">Annual full-time resident and non-resident tuition. The 2025 filing only — no averaging across years.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Multi-year averaging -->
+  <div class="section fade-up">
+    <div class="section-label">Averaging</div>
+    <div class="section-title">Five-year weighted averages</div>
+    <div class="prose">
+      <p>LSAT percentiles, GPA percentiles, and grant amounts are averaged across five years (2021–2025). Each year is weighted by the school's full-time enrollment that year, so larger classes carry more influence.</p>
+    </div>
+    <div class="formula">
+      weighted average = Σ(value × enrollment) / Σ(enrollment)
+    </div>
+    <div class="callout">
+      <p><strong>% Receiving aid</strong> is taken directly from the 2025 filing only — not averaged. Tuition figures also come from 2025 only, since using a single current number is more meaningful than a historical blend.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Calculation steps -->
+  <div class="section fade-up">
+    <div class="section-label">Calculation</div>
+    <div class="section-title">Step-by-step estimate</div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-number">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Score your LSAT against the school's distribution</div>
+          <div class="step-desc">
+            Your LSAT is placed within the school's p25 / p50 / p75 band using linear interpolation, producing a score from 0 to 1. The anchors are fixed: p25 → 0.25, p50 → 0.50, p75 → 0.75. Values outside the band extrapolate linearly and are capped at 0 and 1.0.
+            <div class="formula">
+              Between p25 and p50:<br>
+              score = 0.25 + 0.25 × (LSAT − p25) / (p50 − p25)<br><br>
+              <span class="comment">Example: LSAT 163, p25/p50/p75 = 161/165/167</span><br>
+              score = 0.25 + 0.25 × (163 − 161) / (165 − 161) = <strong>0.375</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-number">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Score your GPA the same way</div>
+          <div class="step-desc">
+            Identical interpolation is applied to your GPA using the school's GPA percentile band.
+            <div class="formula">
+              Above p75 (extrapolates upward):<br>
+              score = 0.75 + 0.25 × (GPA − p75) / (p75 − p50), capped at 1.0<br><br>
+              <span class="comment">Example: GPA 4.00, p25/p50/p75 = 3.49/3.74/3.87</span><br>
+              score = 0.75 + 0.25 × (4.00 − 3.87) / (3.87 − 3.74) = <strong>1.00</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-number">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Blend into one combined score (60 / 40)</div>
+          <div class="step-desc">
+            LSAT and GPA scores are merged with a 60 / 40 weighting, reflecting that LSAT is generally the more heavily weighted factor in admissions decisions.
+            <div class="formula">
+              combined = (0.60 × LSAT score) + (0.40 × GPA score)<br><br>
+              <span class="comment">Example:</span><br>
+              combined = (0.60 × 0.375) + (0.40 × 1.00) = <strong>0.625</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-number">4</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Map the score to a dollar estimate</div>
+          <div class="step-desc">
+            The combined score is matched against the school's grant p25 / p50 / p75 dollar amounts using the same interpolation logic. A score of 0.25 anchors to the grant p25 amount, 0.50 to p50, 0.75 to p75. Scores outside that range extrapolate linearly. Grant estimates are floored at $0.
+            <div class="formula">
+              Between 0.50 and 0.75 anchors:<br>
+              grant = p50g + (score − 0.50) / 0.25 × (p75g − p50g)<br><br>
+              <span class="comment">Example: score = 0.625, p25/p50/p75 = $21,370 / $34,867 / $45,293</span><br>
+              grant = $34,867 + 0.5 × ($45,293 − $34,867) = <strong>$40,080</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-number">5</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Assign applicant strength and confidence labels</div>
+          <div class="step-desc">
+            <strong>Strength</strong> reflects where the combined score falls:<br>
+            &nbsp;&nbsp;≥ 0.60 → Strong &nbsp;|&nbsp; ≥ 0.38 → Competitive &nbsp;|&nbsp; &lt; 0.38 → Reach<br><br>
+            <strong>Confidence</strong> reflects how far your stats sit from the school's observed range:<br>
+            &nbsp;&nbsp;<em>High</em> — both LSAT and GPA fall within the p25–p75 band<br>
+            &nbsp;&nbsp;<em>Medium</em> — one stat is within the band; the other is near it (within 5 LSAT points or 0.20 GPA points)<br>
+            &nbsp;&nbsp;<em>Low</em> — one or both stats require significant extrapolation beyond observed data
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-number">6</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-title">Calculate net cost</div>
+          <div class="step-desc">
+            Net cost subtracts the estimated grant from the school's annual tuition (resident or non-resident, per your selection). If the estimated grant exceeds tuition, net cost is shown as $0. Schools without full-time tuition data — typically those charging per credit hour — show a dash.
+            <div class="formula">
+              net cost = max(0, annual tuition − estimated grant)<br><br>
+              <span class="comment">Example: $36,500 tuition − $40,080 grant = max(0, −$3,580) = <strong>$0</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Need-based -->
+  <div class="section fade-up">
+    <div class="section-label">Special cases</div>
+    <div class="section-title">Need-based schools</div>
+    <div class="prose">
+      <p>Harvard, Yale, and Stanford are flagged as need-based. Grant estimates are suppressed for these schools because their financial aid is awarded primarily on demonstrated financial need rather than LSAT and GPA credentials. Contact each school's financial aid office directly for accurate aid information.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Limitations -->
+  <div class="section fade-up">
+    <div class="section-label">Caveats</div>
+    <div class="section-title">Limitations</div>
+    <div class="prose">
+      <p>These estimates are statistical projections based on historical patterns — not guarantees of what any individual school will offer.</p>
+    </div>
+    <div class="limit-list">
+      <div class="limit-item"><div class="limit-dot"></div><span>Actual awards depend on factors outside the ABA data: application cycle dynamics, class composition goals, competing offers, demonstrated interest, and each school's budget in a given year.</span></div>
+      <div class="limit-item"><div class="limit-dot"></div><span>The model assumes merit aid scales linearly with applicant strength between the p25 and p75 anchors, which simplifies how schools actually structure their award tiers.</span></div>
+      <div class="limit-item"><div class="limit-dot"></div><span>Schools that award grants to nearly all students may show high estimates even for weaker profiles, because the ABA data does not distinguish between merit and nominal aid.</span></div>
+      <div class="limit-item"><div class="limit-dot"></div><span>Extrapolation beyond the observed p25–p75 range (flagged as Low confidence) is inherently less reliable than interpolation within it.</span></div>
+      <div class="limit-item"><div class="limit-dot"></div><span>Tuition figures reflect the 2025 ABA filing and do not include fees, living expenses, or bar preparation costs.</span></div>
+      <div class="limit-item"><div class="limit-dot"></div><span>Only schools present in the 2025 grants filing are included. Schools that closed or lost ABA accreditation before 2025 are excluded.</span></div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Atlas Legis</div>
+    <ul class="footer-links" role="list">
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/sources.html">Sources</a></li>
+      <li><a href="/methodology.html" aria-current="page">Methodology</a></li>
+    </ul>
+    <p class="footer-copy">© <span id="footer-year"></span> Atlas Legis. Data from ABA Required Disclosures. Estimates are for informational purposes only.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</div><!-- /al-shell -->
+
+<script>
+(function () {
+  var sidebar = document.getElementById('alSidebar');
+  var toggle = document.getElementById('alSbToggle');
+  var scrim = document.getElementById('alSbScrim');
+  var themeBtn = document.getElementById('alThemeToggle');
+  var iconMoon = document.getElementById('alThemeIconMoon');
+  var iconSun = document.getElementById('alThemeIconSun');
+  function syncTheme() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    iconMoon.style.display = isDark ? 'none' : 'block';
+    iconSun.style.display = isDark ? 'block' : 'none';
+  }
+  syncTheme();
+  themeBtn.addEventListener('click', function () {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('atlas-theme', isDark ? 'light' : 'dark');
+    syncTheme();
+  });
+  function closeNav() { sidebar.classList.remove('open'); scrim.classList.remove('open'); }
+  function openNav() { sidebar.classList.add('open'); scrim.classList.add('open'); }
+  toggle.addEventListener('click', function () {
+    sidebar.classList.contains('open') ? closeNav() : openNav();
+  });
+  scrim.addEventListener('click', closeNav);
+  sidebar.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { if (window.innerWidth <= 900) closeNav(); });
+  });
+})();
+</script>
+
+</body>
+</html>

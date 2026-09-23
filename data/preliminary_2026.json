@@ -1,0 +1,679 @@
+{
+  "label": "Fall 2026 (self-reported)",
+  "official": false,
+  "source": "Spivey Consulting Group, 2026 vs. 2025 Law School Medians and Class Size Tracker",
+  "disclaimer": "Self-reported by the schools and not yet verified against ABA 509 disclosures.",
+  "generated": "2026-09-22",
+  "schools": {
+    "american-university-washington-college-of-law": {
+      "name": "American University Washington College of Law",
+      "trackerName": "American University",
+      "lsat25": 158,
+      "lsat50": 163,
+      "lsat75": 164,
+      "gpa25": 3.31,
+      "gpa50": 3.65,
+      "gpa75": 3.76
+    },
+    "baylor-law-school": {
+      "name": "Baylor Law School",
+      "trackerName": "Baylor University",
+      "lsat25": 162,
+      "lsat50": 167,
+      "lsat75": 168,
+      "gpa25": 3.22,
+      "gpa50": 3.8,
+      "gpa75": 3.89
+    },
+    "belmont-university-college-of-law": {
+      "name": "Belmont University College of Law",
+      "trackerName": "Belmont University",
+      "lsat25": 159,
+      "lsat50": 162,
+      "lsat75": 164,
+      "gpa25": 3.62,
+      "gpa50": 3.81,
+      "gpa75": 3.92
+    },
+    "boston-college-law-school": {
+      "name": "Boston College Law School",
+      "trackerName": "Boston College",
+      "lsat25": 165,
+      "lsat50": 168,
+      "lsat75": 169,
+      "gpa25": 3.72,
+      "gpa50": 3.85,
+      "gpa75": 3.91
+    },
+    "boston-university-school-of-law": {
+      "name": "Boston University School of Law",
+      "trackerName": "Boston University",
+      "lsat25": 164,
+      "lsat50": 171,
+      "lsat75": 172,
+      "gpa25": 3.7,
+      "gpa50": 3.9,
+      "gpa75": 3.94
+    },
+    "brooklyn-law-school": {
+      "name": "Brooklyn Law School",
+      "trackerName": "Brooklyn Law School",
+      "lsat25": 159,
+      "lsat50": 162,
+      "lsat75": 164,
+      "gpa25": 3.42,
+      "gpa50": 3.64,
+      "gpa75": 3.78
+    },
+    "byu-j-reuben-clark-law-school": {
+      "name": "BYU J. Reuben Clark Law School",
+      "trackerName": "Brigham Young University",
+      "lsat25": 167,
+      "lsat50": 172,
+      "lsat75": 173,
+      "gpa25": 3.82,
+      "gpa50": 3.95,
+      "gpa75": 3.99
+    },
+    "california-western-school-of-law": {
+      "name": "California Western School of Law",
+      "trackerName": "California Western School of Law",
+      "lsat25": 154,
+      "lsat50": 157,
+      "lsat75": 160,
+      "gpa25": 3.19,
+      "gpa50": 3.54,
+      "gpa75": 3.73
+    },
+    "capital-university-law-school": {
+      "name": "Capital University Law School",
+      "trackerName": "Capital University",
+      "lsat25": 149,
+      "lsat50": 152,
+      "lsat75": 156,
+      "gpa25": 3.08,
+      "gpa50": 3.47,
+      "gpa75": 3.76
+    },
+    "cardozo-school-of-law": {
+      "name": "Cardozo School of Law",
+      "trackerName": "Yeshiva University (Cardozo)",
+      "lsat25": 164,
+      "lsat50": 167,
+      "lsat75": 169,
+      "gpa25": 3.6,
+      "gpa50": 3.78,
+      "gpa75": 3.87
+    },
+    "catholic-university-of-america-columbus-school-of-law": {
+      "name": "Catholic University of America Columbus School of Law",
+      "trackerName": "Catholic University of America",
+      "lsat25": 161,
+      "lsat50": 163,
+      "lsat75": 164,
+      "gpa25": 3.61,
+      "gpa50": 3.75,
+      "gpa75": 3.85
+    },
+    "cornell-law-school": {
+      "name": "Cornell Law School",
+      "trackerName": "Cornell University",
+      "lsat25": 167,
+      "lsat50": 173,
+      "lsat75": 175,
+      "gpa25": 3.77,
+      "gpa50": 3.94,
+      "gpa75": 4
+    },
+    "depaul-university-college-of-law": {
+      "name": "DePaul University College of Law",
+      "trackerName": "DePaul University",
+      "lsat25": 155,
+      "lsat50": 159,
+      "lsat75": 161,
+      "gpa25": 3.43,
+      "gpa50": 3.72,
+      "gpa75": 3.87
+    },
+    "drexel-university-kline-school-of-law": {
+      "name": "Drexel University Kline School of Law",
+      "trackerName": "Drexel University",
+      "lsat25": 156,
+      "lsat50": 160,
+      "lsat75": 162,
+      "gpa25": 3.5,
+      "gpa50": 3.8,
+      "gpa75": 3.91
+    },
+    "duquesne-university-school-of-law": {
+      "name": "Duquesne University School of Law",
+      "trackerName": "Duquesne University",
+      "lsat25": 157,
+      "lsat50": 159,
+      "lsat75": 162,
+      "gpa25": 3.4,
+      "gpa50": 3.61,
+      "gpa75": 3.84
+    },
+    "fordham-university-school-of-law": {
+      "name": "Fordham University School of Law",
+      "trackerName": "Fordham University",
+      "lsat25": 167,
+      "lsat50": 169,
+      "lsat75": 171,
+      "gpa25": 3.67,
+      "gpa50": 3.81,
+      "gpa75": 3.88
+    },
+    "georgia-state-university-college-of-law": {
+      "name": "Georgia State University College of Law",
+      "trackerName": "Georgia State University",
+      "lsat25": 159,
+      "lsat50": 161,
+      "lsat75": 164,
+      "gpa25": 3.49,
+      "gpa50": 3.69,
+      "gpa75": 3.85
+    },
+    "harvard-law-school": {
+      "name": "Harvard Law School",
+      "trackerName": "Harvard University",
+      "lsat25": 172,
+      "lsat50": 174,
+      "lsat75": 176,
+      "gpa25": 3.91,
+      "gpa50": 3.97,
+      "gpa75": 4
+    },
+    "lewis-clark-law-school": {
+      "name": "Lewis & Clark Law School",
+      "trackerName": "Lewis & Clark",
+      "lsat25": 159,
+      "lsat50": 162,
+      "lsat75": 166,
+      "gpa25": 3.32,
+      "gpa50": 3.61,
+      "gpa75": 3.83
+    },
+    "loyola-law-school-los-angeles": {
+      "name": "Loyola Law School Los Angeles",
+      "trackerName": "Loyola Marymount University-Los Angeles",
+      "lsat25": 160,
+      "lsat50": 164,
+      "lsat75": 166,
+      "gpa25": 3.61,
+      "gpa50": 3.79,
+      "gpa75": 3.91
+    },
+    "marquette-university-law-school": {
+      "name": "Marquette University Law School",
+      "trackerName": "Marquette University",
+      "lsat25": 157,
+      "lsat50": 159,
+      "lsat75": 162,
+      "gpa25": 3.63,
+      "gpa50": 3.77,
+      "gpa75": 3.87
+    },
+    "mercer-university-walter-f-george-school-of-law": {
+      "name": "Mercer University Walter F. George School of Law",
+      "trackerName": "Mercer University",
+      "lsat25": 156,
+      "lsat50": 159,
+      "lsat75": 161,
+      "gpa25": 3.36,
+      "gpa50": 3.63,
+      "gpa75": 3.8
+    },
+    "michigan-state-university-college-of-law": {
+      "name": "Michigan State University College of Law",
+      "trackerName": "Michigan State University",
+      "lsat25": 158,
+      "lsat50": 163,
+      "lsat75": 165,
+      "gpa25": 3.42,
+      "gpa50": 3.76,
+      "gpa75": 3.89
+    },
+    "new-york-law-school": {
+      "name": "New York Law School",
+      "trackerName": "New York Law School",
+      "lsat25": 154,
+      "lsat50": 158,
+      "lsat75": 161,
+      "gpa25": 3.45,
+      "gpa50": 3.67,
+      "gpa75": 3.82
+    },
+    "nyu-school-of-law": {
+      "name": "NYU School of Law",
+      "trackerName": "New York University",
+      "lsat25": 170,
+      "lsat50": 173,
+      "lsat75": 175,
+      "gpa25": 3.8,
+      "gpa50": 3.92,
+      "gpa75": 3.97
+    },
+    "pepperdine-caruso-school-of-law": {
+      "name": "Pepperdine Caruso School of Law",
+      "trackerName": "Pepperdine University",
+      "lsat25": 162,
+      "lsat50": 165,
+      "lsat75": 167,
+      "gpa25": 3.64,
+      "gpa50": 3.86,
+      "gpa75": 3.93
+    },
+    "rutgers-law-school": {
+      "name": "Rutgers Law School",
+      "trackerName": "Rutgers University",
+      "lsat25": 157,
+      "lsat50": 160,
+      "lsat75": 163,
+      "gpa25": 3.4,
+      "gpa50": 3.67,
+      "gpa75": 3.85
+    },
+    "seton-hall-university-school-of-law": {
+      "name": "Seton Hall University School of Law",
+      "trackerName": "Seton Hall University",
+      "lsat25": 159,
+      "lsat50": 162,
+      "lsat75": 164,
+      "gpa25": 3.52,
+      "gpa50": 3.73,
+      "gpa75": 3.85
+    },
+    "st-johns-university-school-of-law": {
+      "name": "St. John's University School of Law",
+      "trackerName": "St. John's University",
+      "lsat25": 160,
+      "lsat50": 166,
+      "lsat75": 168,
+      "gpa25": 3.49,
+      "gpa50": 3.76,
+      "gpa75": 3.89
+    },
+    "suffolk-university-law-school": {
+      "name": "Suffolk University Law School",
+      "trackerName": "Suffolk University",
+      "lsat25": 152,
+      "lsat50": 156,
+      "lsat75": 161,
+      "gpa25": 3.41,
+      "gpa50": 3.63,
+      "gpa75": 3.81
+    },
+    "syracuse-university-college-of-law": {
+      "name": "Syracuse University College of Law",
+      "trackerName": "Syracuse University",
+      "lsat25": 156,
+      "lsat50": 159,
+      "lsat75": 161,
+      "gpa25": 3.3,
+      "gpa50": 3.6,
+      "gpa75": 3.78
+    },
+    "temple-university-beasley-school-of-law": {
+      "name": "Temple University Beasley School of Law",
+      "trackerName": "Temple University",
+      "lsat25": 162,
+      "lsat50": 165,
+      "lsat75": 167,
+      "gpa25": 3.6,
+      "gpa50": 3.77,
+      "gpa75": 3.89
+    },
+    "texas-a-m-university-school-of-law": {
+      "name": "Texas A&M University School of Law",
+      "trackerName": "Texas A&M University",
+      "lsat25": 162,
+      "lsat50": 170,
+      "lsat75": 171,
+      "gpa25": 3.68,
+      "gpa50": 4,
+      "gpa75": 4
+    },
+    "tulane-university-law-school": {
+      "name": "Tulane University Law School",
+      "trackerName": "Tulane University",
+      "lsat25": 159,
+      "lsat50": 164,
+      "lsat75": 165,
+      "gpa25": 3.53,
+      "gpa50": 3.75,
+      "gpa75": 3.83
+    },
+    "uc-berkeley-school-of-law": {
+      "name": "UC Berkeley School of Law",
+      "trackerName": "University of California-Berkeley",
+      "lsat25": 169,
+      "lsat50": 171,
+      "lsat75": 173,
+      "gpa25": 3.85,
+      "gpa50": 3.93,
+      "gpa75": 4
+    },
+    "uc-college-of-the-law-san-francisco": {
+      "name": "UC College of the Law San Francisco",
+      "trackerName": "University of California-San Francisco",
+      "lsat25": 159,
+      "lsat50": 162,
+      "lsat75": 164,
+      "gpa25": 3.54,
+      "gpa50": 3.73,
+      "gpa75": 3.85
+    },
+    "uc-davis-school-of-law": {
+      "name": "UC Davis School of Law",
+      "trackerName": "University of California-Davis",
+      "lsat25": 163,
+      "lsat50": 165,
+      "lsat75": 167,
+      "gpa25": 3.56,
+      "gpa50": 3.75,
+      "gpa75": 3.87
+    },
+    "uc-irvine-school-of-law": {
+      "name": "UC Irvine School of Law",
+      "trackerName": "University of California-Irvine",
+      "lsat25": 164,
+      "lsat50": 170,
+      "lsat75": 172,
+      "gpa25": 3.67,
+      "gpa50": 3.87,
+      "gpa75": 3.95
+    },
+    "ucla-school-of-law": {
+      "name": "UCLA School of Law",
+      "trackerName": "University of California-Los Angeles",
+      "lsat25": 167,
+      "lsat50": 171,
+      "lsat75": 172,
+      "gpa25": 3.77,
+      "gpa50": 3.96,
+      "gpa75": 4.01
+    },
+    "university-at-buffalo-school-of-law": {
+      "name": "University at Buffalo School of Law",
+      "trackerName": "University at Buffalo",
+      "lsat25": 156,
+      "lsat50": 159,
+      "lsat75": 162,
+      "gpa25": 3.53,
+      "gpa50": 3.73,
+      "gpa75": 3.89
+    },
+    "university-of-akron-school-of-law": {
+      "name": "University of Akron School of Law",
+      "trackerName": "University of Akron",
+      "lsat25": 152,
+      "lsat50": 155,
+      "lsat75": 158,
+      "gpa25": 3.32,
+      "gpa50": 3.57,
+      "gpa75": 3.83
+    },
+    "university-of-cincinnati-college-of-law": {
+      "name": "University of Cincinnati College of Law",
+      "trackerName": "University of Cincinnati",
+      "lsat25": 157,
+      "lsat50": 159,
+      "lsat75": 162,
+      "gpa25": 3.72,
+      "gpa50": 3.85,
+      "gpa75": 3.96
+    },
+    "university-of-colorado-law-school": {
+      "name": "University of Colorado Law School",
+      "trackerName": "University of Colorado",
+      "lsat25": 163,
+      "lsat50": 166,
+      "lsat75": 168,
+      "gpa25": 3.66,
+      "gpa50": 3.83,
+      "gpa75": 3.93
+    },
+    "university-of-dayton-school-of-law": {
+      "name": "University of Dayton School of Law",
+      "trackerName": "University of Dayton",
+      "lsat25": 155,
+      "lsat50": 158,
+      "lsat75": 161,
+      "gpa25": 3.42,
+      "gpa50": 3.64,
+      "gpa75": 3.86
+    },
+    "university-of-denver-sturm-college-of-law": {
+      "name": "University of Denver Sturm College of Law",
+      "trackerName": "University of Denver",
+      "lsat25": 157,
+      "lsat50": 161,
+      "lsat75": 163,
+      "gpa25": 3.42,
+      "gpa50": 3.7,
+      "gpa75": 3.83
+    },
+    "university-of-florida-levin-college-of-law": {
+      "name": "University of Florida Levin College of Law",
+      "trackerName": "University of Florida",
+      "lsat25": 167,
+      "lsat50": 170,
+      "lsat75": 171,
+      "gpa25": 3.78,
+      "gpa50": 3.97,
+      "gpa75": 4
+    },
+    "university-of-hawaii-richardson-school-of-law": {
+      "name": "University of Hawaii Richardson School of Law",
+      "trackerName": "University of Hawaii",
+      "lsat25": 157,
+      "lsat50": 159,
+      "lsat75": 162,
+      "gpa25": 3.4,
+      "gpa50": 3.61,
+      "gpa75": 3.81
+    },
+    "university-of-illinois-college-of-law": {
+      "name": "University of Illinois College of Law",
+      "trackerName": "University of Illinois",
+      "lsat25": 164,
+      "lsat50": 168,
+      "lsat75": 170,
+      "gpa25": 3.55,
+      "gpa50": 3.85,
+      "gpa75": 3.94
+    },
+    "university-of-louisville-brandeis-school-of-law": {
+      "name": "University of Louisville Brandeis School of Law",
+      "trackerName": "University of Louisville",
+      "lsat25": 153,
+      "lsat50": 156,
+      "lsat75": 159,
+      "gpa25": 3.29,
+      "gpa50": 3.67,
+      "gpa75": 3.89
+    },
+    "university-of-maine-school-of-law": {
+      "name": "University of Maine School of Law",
+      "trackerName": "University of Maine",
+      "lsat25": 156,
+      "lsat50": 160,
+      "lsat75": 163,
+      "gpa25": 3.38,
+      "gpa50": 3.71,
+      "gpa75": 3.87
+    },
+    "university-of-michigan-law-school": {
+      "name": "University of Michigan Law School",
+      "trackerName": "University of Michigan",
+      "lsat25": 168,
+      "lsat50": 172,
+      "lsat75": 173,
+      "gpa25": 3.74,
+      "gpa50": 3.9,
+      "gpa75": 3.96
+    },
+    "university-of-missouri-kansas-city-school-of-law": {
+      "name": "University of Missouri-Kansas City School of Law",
+      "trackerName": "University of Missouri-Kansas City",
+      "lsat25": 156,
+      "lsat50": 158,
+      "lsat75": 161,
+      "gpa25": 3.42,
+      "gpa50": 3.62,
+      "gpa75": 3.81
+    },
+    "university-of-missouri-school-of-law": {
+      "name": "University of Missouri School of Law",
+      "trackerName": "University of Missouri",
+      "lsat25": 159,
+      "lsat50": 162,
+      "lsat75": 164,
+      "gpa25": 3.68,
+      "gpa50": 3.82,
+      "gpa75": 3.95
+    },
+    "university-of-north-carolina-school-of-law": {
+      "name": "University of North Carolina School of Law",
+      "trackerName": "University of North Carolina",
+      "lsat25": 168,
+      "lsat50": 170,
+      "lsat75": 171,
+      "gpa25": 3.7,
+      "gpa50": 3.9,
+      "gpa75": 3.97
+    },
+    "university-of-pittsburgh-school-of-law": {
+      "name": "University of Pittsburgh School of Law",
+      "trackerName": "University of Pittsburgh",
+      "lsat25": 160,
+      "lsat50": 163,
+      "lsat75": 165,
+      "gpa25": 3.34,
+      "gpa50": 3.58,
+      "gpa75": 3.77
+    },
+    "university-of-richmond-school-of-law": {
+      "name": "University of Richmond School of Law",
+      "trackerName": "University of Richmond",
+      "lsat25": 160,
+      "lsat50": 165,
+      "lsat75": 166,
+      "gpa25": 3.52,
+      "gpa50": 3.81,
+      "gpa75": 3.88
+    },
+    "university-of-san-diego-school-of-law": {
+      "name": "University of San Diego School of Law",
+      "trackerName": "University of San Diego",
+      "lsat25": 163,
+      "lsat50": 166,
+      "lsat75": 168,
+      "gpa25": 3.61,
+      "gpa50": 3.84,
+      "gpa75": 3.93
+    },
+    "university-of-st-thomas-school-of-law": {
+      "name": "University of St. Thomas School of Law",
+      "trackerName": "University of St. Thomas (Minnesota)",
+      "lsat25": 156,
+      "lsat50": 160,
+      "lsat75": 164,
+      "gpa25": 3.52,
+      "gpa50": 3.7,
+      "gpa75": 3.86
+    },
+    "university-of-the-pacific-mcgeorge-school-of-law": {
+      "name": "University of the Pacific McGeorge School of Law",
+      "trackerName": "University of the Pacific",
+      "lsat25": 154,
+      "lsat50": 157,
+      "lsat75": 161,
+      "gpa25": 3.17,
+      "gpa50": 3.51,
+      "gpa75": 3.73
+    },
+    "university-of-virginia-school-of-law": {
+      "name": "University of Virginia School of Law",
+      "trackerName": "University of Virginia",
+      "lsat25": 168,
+      "lsat50": 173,
+      "lsat75": 175,
+      "gpa25": 3.82,
+      "gpa50": 3.99,
+      "gpa75": 4.04
+    },
+    "unlv-william-s-boyd-school-of-law": {
+      "name": "UNLV William S. Boyd School of Law",
+      "trackerName": "University of Nevada-Las Vegas",
+      "lsat25": 155,
+      "lsat50": 160,
+      "lsat75": 162,
+      "gpa25": 3.42,
+      "gpa50": 3.75,
+      "gpa75": 3.88
+    },
+    "usc-gould-school-of-law": {
+      "name": "USC Gould School of Law",
+      "trackerName": "University of Southern California",
+      "lsat25": 166,
+      "lsat50": 170,
+      "lsat75": 171,
+      "gpa25": 3.81,
+      "gpa50": 3.93,
+      "gpa75": 4
+    },
+    "vanderbilt-university-law-school": {
+      "name": "Vanderbilt University Law School",
+      "trackerName": "Vanderbilt University",
+      "lsat25": 167,
+      "lsat50": 171,
+      "lsat75": 172,
+      "gpa25": 3.74,
+      "gpa50": 3.9,
+      "gpa75": 3.98
+    },
+    "villanova-university-widger-school-of-law": {
+      "name": "Villanova University Widger School of Law",
+      "trackerName": "Villanova University",
+      "lsat25": 161,
+      "lsat50": 166,
+      "lsat75": 167,
+      "gpa25": 3.64,
+      "gpa50": 3.81,
+      "gpa75": 3.91
+    },
+    "wake-forest-university-school-of-law": {
+      "name": "Wake Forest University School of Law",
+      "trackerName": "Wake Forest University",
+      "lsat25": 166,
+      "lsat50": 167,
+      "lsat75": 169,
+      "gpa25": 3.59,
+      "gpa50": 3.79,
+      "gpa75": 3.9
+    },
+    "washington-and-lee-university-school-of-law": {
+      "name": "Washington and Lee University School of Law",
+      "trackerName": "Washington and Lee University",
+      "lsat25": 163,
+      "lsat50": 168,
+      "lsat75": 169,
+      "gpa25": 3.58,
+      "gpa50": 3.81,
+      "gpa75": 3.85
+    },
+    "william-mary-law-school": {
+      "name": "William & Mary Law School",
+      "trackerName": "William & Mary",
+      "lsat25": 163,
+      "lsat50": 167,
+      "lsat75": 168,
+      "gpa25": 3.49,
+      "gpa50": 3.81,
+      "gpa75": 3.91
+    }
+  }
+}

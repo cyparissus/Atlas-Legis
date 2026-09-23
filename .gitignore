@@ -1,0 +1,17 @@
+# Cloudflare Worker local secrets — never commit
+workers/.dev.vars
+
+# Wrangler internal cache
+workers/.wrangler/
+
+# Scratch space for local document review — personal files, never commit
+tmp/
+
+# Claude Code worktrees (full second copy of the repo)
+.claude/worktrees/
+
+__pycache__/
+
+*.pyc
+
+.claude/settings.local.json
