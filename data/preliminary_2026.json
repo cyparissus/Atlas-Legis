@@ -3,7 +3,7 @@
   "official": false,
   "source": "Spivey Consulting Group, 2026 vs. 2025 Law School Medians and Class Size Tracker",
   "disclaimer": "Self-reported by the schools and not yet verified against ABA 509 disclosures.",
-  "generated": "2026-09-22",
+  "generated": "2026-10-11",
   "schools": {
     "american-university-washington-college-of-law": {
       "name": "American University Washington College of Law",
@@ -14,6 +14,16 @@
       "gpa25": 3.31,
       "gpa50": 3.65,
       "gpa75": 3.76
+    },
+    "atlantas-john-marshall-law-school": {
+      "name": "Atlanta's John Marshall Law School",
+      "trackerName": "Atlanta's John Marshall Law School",
+      "lsat25": 151,
+      "lsat50": 153,
+      "lsat75": 155,
+      "gpa25": 2.79,
+      "gpa50": 3.2,
+      "gpa75": 3.53
     },
     "baylor-law-school": {
       "name": "Baylor Law School",
@@ -115,6 +125,16 @@
       "gpa50": 3.75,
       "gpa75": 3.85
     },
+    "columbia-law-school": {
+      "name": "Columbia Law School",
+      "trackerName": "Columbia University",
+      "lsat25": 171,
+      "lsat50": 173,
+      "lsat75": 175,
+      "gpa25": 3.88,
+      "gpa50": 3.95,
+      "gpa75": 4.0
+    },
     "cornell-law-school": {
       "name": "Cornell Law School",
       "trackerName": "Cornell University",
@@ -134,6 +154,16 @@
       "gpa25": 3.43,
       "gpa50": 3.72,
       "gpa75": 3.87
+    },
+    "drake-university-law-school": {
+      "name": "Drake University Law School",
+      "trackerName": "Drake University",
+      "lsat25": 154,
+      "lsat50": 156,
+      "lsat75": 160,
+      "gpa25": 3.56,
+      "gpa50": 3.71,
+      "gpa75": 3.88
     },
     "drexel-university-kline-school-of-law": {
       "name": "Drexel University Kline School of Law",
@@ -195,6 +225,16 @@
       "gpa50": 3.61,
       "gpa75": 3.83
     },
+    "lincoln-memorial-university-duncan-school-of-law": {
+      "name": "Lincoln Memorial University Duncan School of Law",
+      "trackerName": "Lincoln Memorial",
+      "lsat25": 149,
+      "lsat50": 151,
+      "lsat75": 155,
+      "gpa25": 3.26,
+      "gpa50": 3.57,
+      "gpa75": 3.84
+    },
     "loyola-law-school-los-angeles": {
       "name": "Loyola Law School Los Angeles",
       "trackerName": "Loyola Marymount University-Los Angeles",
@@ -245,6 +285,26 @@
       "gpa50": 3.67,
       "gpa75": 3.82
     },
+    "northwestern-pritzker-school-of-law": {
+      "name": "Northwestern Pritzker School of Law",
+      "trackerName": "Northwestern University",
+      "lsat25": 169,
+      "lsat50": 174,
+      "lsat75": 176,
+      "gpa25": 3.79,
+      "gpa50": 3.95,
+      "gpa75": 4.0
+    },
+    "nova-southeastern-university-shepard-broad-college-of-law": {
+      "name": "Nova Southeastern University Shepard Broad College of Law",
+      "trackerName": "Nova Southeastern University",
+      "lsat25": 153,
+      "lsat50": 156,
+      "lsat75": 158,
+      "gpa25": 3.35,
+      "gpa50": 3.55,
+      "gpa75": 3.72
+    },
     "nyu-school-of-law": {
       "name": "NYU School of Law",
       "trackerName": "New York University",
@@ -254,6 +314,16 @@
       "gpa25": 3.8,
       "gpa50": 3.92,
       "gpa75": 3.97
+    },
+    "ohio-state-university-moritz-college-of-law": {
+      "name": "Ohio State University Moritz College of Law",
+      "trackerName": "Ohio State University",
+      "lsat25": 161,
+      "lsat50": 169,
+      "lsat75": 170,
+      "gpa25": 3.77,
+      "gpa50": 3.94,
+      "gpa75": 3.98
     },
     "pepperdine-caruso-school-of-law": {
       "name": "Pepperdine Caruso School of Law",
@@ -294,6 +364,16 @@
       "gpa25": 3.49,
       "gpa50": 3.76,
       "gpa75": 3.89
+    },
+    "st-marys-university-school-of-law": {
+      "name": "St. Mary's University School of Law",
+      "trackerName": "St. Mary's University",
+      "lsat25": 151,
+      "lsat50": 153,
+      "lsat75": 155,
+      "gpa25": 3.14,
+      "gpa50": 3.48,
+      "gpa75": 3.73
     },
     "suffolk-university-law-school": {
       "name": "Suffolk University Law School",
@@ -415,6 +495,16 @@
       "gpa50": 3.57,
       "gpa75": 3.83
     },
+    "university-of-alabama-school-of-law": {
+      "name": "University of Alabama School of Law",
+      "trackerName": "University of Alabama",
+      "lsat25": 161,
+      "lsat50": 169,
+      "lsat75": 170,
+      "gpa25": 3.63,
+      "gpa50": 3.98,
+      "gpa75": 4.06
+    },
     "university-of-cincinnati-college-of-law": {
       "name": "University of Cincinnati College of Law",
       "trackerName": "University of Cincinnati",
@@ -434,6 +524,16 @@
       "gpa25": 3.66,
       "gpa50": 3.83,
       "gpa75": 3.93
+    },
+    "university-of-connecticut-school-of-law": {
+      "name": "University of Connecticut School of Law",
+      "trackerName": "University of Connecticut",
+      "lsat25": 160,
+      "lsat50": 162,
+      "lsat75": 164,
+      "gpa25": 3.6,
+      "gpa50": 3.78,
+      "gpa75": 3.9
     },
     "university-of-dayton-school-of-law": {
       "name": "University of Dayton School of Law",
@@ -505,6 +605,16 @@
       "gpa50": 3.71,
       "gpa75": 3.87
     },
+    "university-of-memphis-humphreys-school-of-law": {
+      "name": "University of Memphis Humphreys School of Law",
+      "trackerName": "University of Memphis",
+      "lsat25": 152,
+      "lsat50": 156,
+      "lsat75": 159,
+      "gpa25": 3.26,
+      "gpa50": 3.58,
+      "gpa75": 3.8
+    },
     "university-of-michigan-law-school": {
       "name": "University of Michigan Law School",
       "trackerName": "University of Michigan",
@@ -514,6 +624,16 @@
       "gpa25": 3.74,
       "gpa50": 3.9,
       "gpa75": 3.96
+    },
+    "university-of-minnesota-law-school": {
+      "name": "University of Minnesota Law School",
+      "trackerName": "University of Minnesota",
+      "lsat25": 165,
+      "lsat50": 171,
+      "lsat75": 172,
+      "gpa25": 3.69,
+      "gpa50": 3.93,
+      "gpa75": 3.98
     },
     "university-of-missouri-kansas-city-school-of-law": {
       "name": "University of Missouri-Kansas City School of Law",
@@ -545,6 +665,16 @@
       "gpa50": 3.9,
       "gpa75": 3.97
     },
+    "university-of-notre-dame-law-school": {
+      "name": "University of Notre Dame Law School",
+      "trackerName": "University of Notre Dame",
+      "lsat25": 168,
+      "lsat50": 171,
+      "lsat75": 172,
+      "gpa25": 3.74,
+      "gpa50": 3.9,
+      "gpa75": 3.98
+    },
     "university-of-pittsburgh-school-of-law": {
       "name": "University of Pittsburgh School of Law",
       "trackerName": "University of Pittsburgh",
@@ -574,6 +704,16 @@
       "gpa25": 3.61,
       "gpa50": 3.84,
       "gpa75": 3.93
+    },
+    "university-of-san-francisco-school-of-law": {
+      "name": "University of San Francisco School of Law",
+      "trackerName": "University of San Francisco",
+      "lsat25": 155,
+      "lsat50": 157,
+      "lsat75": 159,
+      "gpa25": 3.28,
+      "gpa50": 3.54,
+      "gpa75": 3.74
     },
     "university-of-st-thomas-school-of-law": {
       "name": "University of St. Thomas School of Law",
@@ -665,6 +805,26 @@
       "gpa50": 3.81,
       "gpa75": 3.85
     },
+    "widener-university-commonwealth-law-school": {
+      "name": "Widener University Commonwealth Law School",
+      "trackerName": "Widener University-Commonwealth",
+      "lsat25": 147,
+      "lsat50": 149,
+      "lsat75": 153,
+      "gpa25": 3.02,
+      "gpa50": 3.36,
+      "gpa75": 3.62
+    },
+    "widener-university-delaware-law-school": {
+      "name": "Widener University Delaware Law School",
+      "trackerName": "Widener University-Delaware",
+      "lsat25": 151,
+      "lsat50": 153,
+      "lsat75": 156,
+      "gpa25": 3.06,
+      "gpa50": 3.4,
+      "gpa75": 3.66
+    },
     "william-mary-law-school": {
       "name": "William & Mary Law School",
       "trackerName": "William & Mary",
@@ -674,6 +834,26 @@
       "gpa25": 3.49,
       "gpa50": 3.81,
       "gpa75": 3.91
+    },
+    "wilmington-university-school-of-law": {
+      "name": "Wilmington University School of Law",
+      "trackerName": "Wilmington University",
+      "lsat25": 146,
+      "lsat50": 149,
+      "lsat75": 152,
+      "gpa25": 2.94,
+      "gpa50": 3.31,
+      "gpa75": 3.64
+    },
+    "yale-law-school": {
+      "name": "Yale Law School",
+      "trackerName": "Yale University",
+      "lsat25": 171,
+      "lsat50": 175,
+      "lsat75": 178,
+      "gpa25": 3.92,
+      "gpa50": 3.98,
+      "gpa75": 4.0
     }
   }
 }
