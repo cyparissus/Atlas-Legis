@@ -3,7 +3,7 @@
   "official": false,
   "source": "Spivey Consulting Group, 2026 vs. 2025 Law School Medians and Class Size Tracker",
   "disclaimer": "Self-reported by the schools and not yet verified against ABA 509 disclosures.",
-  "generated": "2026-10-11",
+  "generated": "2026-10-20",
   "schools": {
     "american-university-washington-college-of-law": {
       "name": "American University Washington College of Law",
@@ -133,7 +133,7 @@
       "lsat75": 175,
       "gpa25": 3.88,
       "gpa50": 3.95,
-      "gpa75": 4.0
+      "gpa75": 4
     },
     "cornell-law-school": {
       "name": "Cornell Law School",
@@ -285,6 +285,16 @@
       "gpa50": 3.67,
       "gpa75": 3.82
     },
+    "northern-kentucky-university-chase-college-of-law": {
+      "name": "Northern Kentucky University Chase College of Law",
+      "trackerName": "Northern Kentucky University",
+      "lsat25": 152,
+      "lsat50": 155,
+      "lsat75": 159,
+      "gpa25": 3.2,
+      "gpa50": 3.49,
+      "gpa75": 3.71
+    },
     "northwestern-pritzker-school-of-law": {
       "name": "Northwestern Pritzker School of Law",
       "trackerName": "Northwestern University",
@@ -293,7 +303,7 @@
       "lsat75": 176,
       "gpa25": 3.79,
       "gpa50": 3.95,
-      "gpa75": 4.0
+      "gpa75": 4
     },
     "nova-southeastern-university-shepard-broad-college-of-law": {
       "name": "Nova Southeastern University Shepard Broad College of Law",
@@ -325,6 +335,16 @@
       "gpa50": 3.94,
       "gpa75": 3.98
     },
+    "penn-carey-law": {
+      "name": "Penn Carey Law",
+      "trackerName": "University of Pennsylvania",
+      "lsat25": 167,
+      "lsat50": 174,
+      "lsat75": 176,
+      "gpa25": 3.81,
+      "gpa50": 3.96,
+      "gpa75": 4
+    },
     "pepperdine-caruso-school-of-law": {
       "name": "Pepperdine Caruso School of Law",
       "trackerName": "Pepperdine University",
@@ -344,6 +364,16 @@
       "gpa25": 3.4,
       "gpa50": 3.67,
       "gpa75": 3.85
+    },
+    "santa-clara-university-school-of-law": {
+      "name": "Santa Clara University School of Law",
+      "trackerName": "Santa Clara University",
+      "lsat25": 158,
+      "lsat50": 161,
+      "lsat75": 164,
+      "gpa25": 3.18,
+      "gpa50": 3.52,
+      "gpa75": 3.72
     },
     "seton-hall-university-school-of-law": {
       "name": "Seton Hall University School of Law",
@@ -655,6 +685,16 @@
       "gpa50": 3.82,
       "gpa75": 3.95
     },
+    "university-of-montana-school-of-law": {
+      "name": "University of Montana School of Law",
+      "trackerName": "University of Montana",
+      "lsat25": 152,
+      "lsat50": 156,
+      "lsat75": 159,
+      "gpa25": 3.41,
+      "gpa50": 3.59,
+      "gpa75": 3.83
+    },
     "university-of-north-carolina-school-of-law": {
       "name": "University of North Carolina School of Law",
       "trackerName": "University of North Carolina",
@@ -744,6 +784,16 @@
       "gpa25": 3.82,
       "gpa50": 3.99,
       "gpa75": 4.04
+    },
+    "university-of-washington-school-of-law": {
+      "name": "University of Washington School of Law",
+      "trackerName": "University of Washington",
+      "lsat25": 164,
+      "lsat50": 166,
+      "lsat75": 169,
+      "gpa25": 3.66,
+      "gpa50": 3.8,
+      "gpa75": 3.9
     },
     "unlv-william-s-boyd-school-of-law": {
       "name": "UNLV William S. Boyd School of Law",
@@ -853,7 +903,7 @@
       "lsat75": 178,
       "gpa25": 3.92,
       "gpa50": 3.98,
-      "gpa75": 4.0
+      "gpa75": 4
     }
   }
 }
